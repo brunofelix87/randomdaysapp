@@ -1,0 +1,19 @@
+{
+  "name": "randomdaysapp",
+  "version": "1.0.0",
+  "description": "App to five random number from 2 to 5, to pull synthetic monitoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Félix",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-schedule": "^1.3.2",
+    "random": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
