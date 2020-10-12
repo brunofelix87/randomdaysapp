@@ -6,10 +6,10 @@ const port = 8080;
 const HOST = '0.0.0.0';
 
 let test = '3'
-var j = schedule.scheduleJob('1 0 * * *', function () {
-    test = random.int(2, 5);    
-    return test;
-});
+//var j = schedule.scheduleJob('1 0 * * *', function () {
+//    test = random.int(2, 5);    
+//    return test;
+//});
 
 var process = require('process')
 process.on('SIGINT', () => {
@@ -20,9 +20,9 @@ process.on('SIGINT', () => {
 
 app.get('/', (req, res) => {
     
-    if (test === '') {
-        test = random.int(2, 5);
-    }
+    //if (test === '') {
+    //    test = random.int(2, 5);
+    //}
 
     res.setHeader('Content-Type', 'application/json');
     let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
