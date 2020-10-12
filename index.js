@@ -5,7 +5,7 @@ const app = express();
 const port = 8080;
 const HOST = '0.0.0.0';
 
-let test = ''
+let test = '3'
 var j = schedule.scheduleJob('1 0 * * *', function () {
     test = random.int(2, 5);    
     return test;
