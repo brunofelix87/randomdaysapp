@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "App to five random number from 2 to 5, to pull synthetic monitoring",
   "main": "index.js",
+  "serve": "nodemon index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+
   },
   "author": "Bruno Félix",
   "license": "MIT",

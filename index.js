@@ -20,6 +20,7 @@ process.on('SIGINT', () => {
 
 app.get('/', (req, res) => {
     
+    //if first run than generate random
     //if (test === '') {
     //    test = random.int(2, 5);
     //}
@@ -28,10 +29,36 @@ app.get('/', (req, res) => {
     let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     //console.log(JSON.stringify(req.headers));
     res.json({
-        randomNumber: test,
+        randomNumber: parseInt(test),
         Ip: ip
     });
 })
+
+app.get('/scrapeintervals', (req, res) => {
+    
+    let hotelScrapeInterval = 60
+    let chainScrapeInterval = 300
+    let cityScrapeInterval = 600
+
+    res.setHeader('Content-Type', 'application/json');
+    let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    res.json({
+        hotelScrapeInterval: hotelScrapeInterval,
+        chainScrapeInterval: chainScrapeInterval,
+        cityScrapeInterval: cityScrapeInterval
+    });
+})
+
+app.get('/hotelids', (req, res) => {
+    
+    var hotelids = [5355,10268,5591,4536];
+
+    res.setHeader('Content-Type', 'application/json');
+    res.json({
+        hotelids: hotelids,
+    });
+})
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
